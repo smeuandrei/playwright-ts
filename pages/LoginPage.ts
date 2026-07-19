@@ -14,8 +14,7 @@ export class LoginPage {
     this.password = "#password";
     this.submitButton = "#login-button";
     this.inventoryContainer = "#inventory_container";
-    this.errorMessage =
-      "#login_button_container > div > form > div.error-message-container.error > h3";
+    this.errorMessage =".error-message-container.error > h3";
   }
 
   async accessSite() {

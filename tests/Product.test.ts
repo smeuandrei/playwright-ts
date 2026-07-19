@@ -15,17 +15,13 @@ test("Test product ordering by name", async ({ page }) => {
 
   //Check first & last products
   await productPageActions.verifyFirstProductName("Sauce Labs Backpack");
-  await productPageActions.verifyLastProductName(
-    "Test.allTheThings() T-Shirt (Red)",
-  );
+  await productPageActions.verifyLastProductName("Test.allTheThings() T-Shirt (Red)");
 
   //Filter by descendent name
   await productPageActions.filterProduct("za");
 
   //Check first & last products
-  await productPageActions.verifyFirstProductName(
-    "Test.allTheThings() T-Shirt (Red)",
-  );
+  await productPageActions.verifyFirstProductName("Test.allTheThings() T-Shirt (Red)");
   await productPageActions.verifyLastProductName("Sauce Labs Backpack");
 });
 
@@ -65,7 +61,7 @@ test("Test product data", async ({ page }) => {
   const productDescription =
     "A red light isn't the desired state in testing but it sure helps when riding your bike at night. Water-resistant with 3 lighting modes, 1 AAA battery included.";
   const productPrice = "$9.99";
-  await productPageActions.checkProductData(
+  await productPageActions.verifyProductData(
     productName,
     productDescription,
     productPrice,
@@ -73,4 +69,7 @@ test("Test product data", async ({ page }) => {
 
   //Access the product page
   await productPageActions.accessProductPage(productName);
+
+  //Verify the product data
+  await productPageActions.verifyProductPageData(productName, productDescription, productPrice);
 });

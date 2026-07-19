@@ -1,7 +1,7 @@
 import { test } from "@playwright/test";
 import { LoginPage } from "../pages/LoginPage";
 
-test("Open Test Page", async ({ page }) => {
+test("Verify invalid login", async ({ page }) => {
   const loginPageActions = new LoginPage(page);
 
   await loginPageActions.accessSite();
